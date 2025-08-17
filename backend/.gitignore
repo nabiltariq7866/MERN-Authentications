@@ -1,0 +1,77 @@
+# Environment files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env*.local
+
+# Configuration files with secrets
+config.env
+*.config.js
+secrets.json
+credentials.json
+firebase.json
+
+# Dependency directories
+node_modules/
+bower_components/
+jspm_packages/
+.pnp/
+.pnp.js
+
+# Build directories
+dist/
+build/
+out/
+.next/
+.nuxt/
+
+# Cache directories
+.cache/
+.temp/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+
+# Debug
+debug.log
+
+# Local development
+*.local
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# OS generated files
+ehthumbs.db
+Icon?
+._*
+
+# Backup files
+*.bak
+*.tmp
+*.orig
