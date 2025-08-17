@@ -322,7 +322,7 @@ export const resetPassword = async (req, res) => {
     user.resetPasswordToken = undefined;
     user.resetPasswordTokenExpire = undefined;
     await user.save();
-    sendToken(user, 200, "Password reset successful", res);
+    res.status(200).json({ message: "Password reset successful" });
   } catch (error) {
     res.status(500).json({ message: "Internal server error", error: error.message });
 

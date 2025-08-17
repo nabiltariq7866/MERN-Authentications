@@ -148,6 +148,7 @@ export const AuthProvider = ({ children }) => {
       const { data } = await api.put(`/resetPassword/${token}`, formData);
       setResetPasswordState({ loading: false, data, error: null });
       setUser(data.user);
+      setStatus({ status: 200, data: "password reset" });
       toast.success("Password reset successfully!");
     } catch (error) {
       const errMsg = error.response?.data?.message || "Reset failed";

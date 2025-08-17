@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams, Link, useParams } from "react-router-dom";
+import { useSearchParams, Link, useParams, useNavigate } from "react-router-dom";
 import AuthCard from "../components/AuthCard";
 import PasswordInput from "../components/PasswordInput";
 import SubmitButton from "../components/SubmitButton";
@@ -13,7 +13,7 @@ function ResetPasswordPage() {
   const [errors, setErrors] = useState({});
 
   const { token } = useParams(); // /reset-password/:token
-
+  const navigate = useNavigate()
   const validate = () => {
     const e = {};
     if (!form.password) e.password = "Password is required";
@@ -43,8 +43,9 @@ function ResetPasswordPage() {
 
   };
   useEffect(() => {
-    if (status === 200) {
+    if (status?.status === 200 && status.data === "password reset") {
       setStatus(null); // Reset status after successful reset
+      navigate("/login"); // Redirect to login after reset
       setForm({ password: "", confirm: "" }); // Clear form
     }
   }, [status])
